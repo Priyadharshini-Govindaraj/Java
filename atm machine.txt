@@ -1,0 +1,62 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter your 4 digit pin:-  ");
+        int pass=sc.nextInt();
+        int password=1234;
+        int balance=50000;
+        System.out.println("Welcome");
+        System.out.println("1.Check Balance ");
+        System.out.println("2.Withdraw Money "); 
+        System.out.println("3. Deposit Money ");
+        System.out.println("4. Exit ");
+        if(pass==password)
+        {
+         while(true){
+        System.out.println(" Enter your choice (1/2/3/4):");
+        int a=sc.nextInt();
+     
+        switch(a)
+        {
+            case 1:
+                System.out.println("Your current balance is " +balance);
+                break;
+            case 2:
+                System.out.print("Enter your withdraw amount: ");
+                int wa=sc.nextInt();
+                    if(wa<=balance && wa%100==0)
+                    {
+                        balance=balance-wa;
+                         System.out.println("Withdraw Succesful");
+                    }
+                    else if(wa%100!=0)  
+                     System.out.println("Please enter valid amount");
+                    else
+                     System.out.println("Insufficient Balance");
+                    
+                break;
+            case 3:
+                 System.out.print(
+                    "Enter your  Deposit amount:");
+                int dep=sc.nextInt();
+                System.out.print(dep);
+                balance=balance+dep;
+                System.out.println("Deposit successful");
+                break;
+            case 4:
+                System.out.println("Thankyou");
+            default:
+            System.out.println("Invalid Option");
+            
+        }
+         }
+        }
+         else
+            System.out.println("Incorrect Pin");
+        
+        
+    }
+}
